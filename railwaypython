@@ -1,0 +1,30 @@
+#railway management
+pass
+class Train:
+    def __init__(self,name,fare,seats):
+        self.name=name
+        self.fare =fare
+        self.seats=seats
+
+        def getstatus(self):
+            print("............")
+            print(f"the name of train is {self.name}")
+            print(f"the seats available in th trin are{self.seats}")
+            print(".............")
+            def fareinfo(self):
+                print(f"the price of the tickits is :rs{self.fare}")
+                def booktickit(self):
+                    if (self.seats>0):
+                        print("your ticket has been booked!!! your seat number is {self.seats}")
+                        self.seats=self.seats - 1
+                    else:
+                        print("sorry this is full!!")
+                        def cancelticket(self,seatNo):
+                            pass
+                        inercity =train("intercity Expess: 14520", 90,2)
+                        intercity.getstatus()
+                        intercity.bookticket()
+                        intercity.bookticket()
+                        intercity.bookticket()
+                        intercity.getstatus()
+                        
