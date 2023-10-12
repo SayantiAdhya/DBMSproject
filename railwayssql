@@ -1,0 +1,47 @@
+-- Active: 1696921749412@@127.0.0.1@3306
+# importing required libraries
+import mysql.connector
+
+dataBase = mysql.connector.connect
+host="localhost",
+  user="root",
+  password="poiuytrewq1@"
+)
+
+# preparing a cursor object
+cursorObject = dataBase.cursor()
+
+# creating database
+cursorObject.execute("railway_management_system")
+-- Create a database for the railway management system
+CREATE DATABASE railway_management_system;
+
+-- Use the newly created database
+-USE railway_management_system;
+
+-- Create a table to store information about trains
+CREATE TABLE trains (
+    train_id INT AUTO_INCREMENT PRIMARY KEY,
+    train_name VARCHAR(255) NOT NULL,
+    source_station VARCHAR(255) NOT NULL,
+    destination_station VARCHAR(255) NOT NULL,
+    departure_time TIME NOT NULL,
+    arrival_time TIME NOT NULL,
+    total_seats INT NOT NULL
+);
+
+-- Create a table to store information about stations
+CREATE TABLE stations (
+    station_id INT AUTO_INCREMENT PRIMARY KEY,
+    station_name VARCHAR(255) NOT NULL
+);
+
+-- Create a table to store information about reservations
+CREATE TABLE reservations (
+    reservation_id INT AUTO_INCREMENT PRIMARY KEY,
+    train_id INT NOT NULL,
+    passenger_name VARCHAR(255) NOT NULL,
+    seat_number VARCHAR(10) NOT NULL,
+    reservation_date DATE NOT NULL,
+    FOREIGN KEY (train_id) REFERENCES trains(train_id)
+);
